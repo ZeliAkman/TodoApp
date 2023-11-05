@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/anasayfaFragment">
+
+    <fragment
+        android:id="@+id/anasayfaFragment"
+        android:name="com.example.todoapp.ui.fragment.AnasayfaFragment"
+        android:label="fragment_anasayfa"
+        tools:layout="@layout/fragment_anasayfa" >
+        <action
+            android:id="@+id/todoDetayGecis"
+            app:destination="@id/todoDetayFragment" />
+        <action
+            android:id="@+id/todoKayitGecis"
+            app:destination="@id/todoKayitFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/todoKayitFragment"
+        android:name="com.example.todoapp.ui.fragment.TodoKayitFragment"
+        android:label="fragment_todo_kayit"
+        tools:layout="@layout/fragment_todo_kayit" />
+    <fragment
+        android:id="@+id/todoDetayFragment"
+        android:name="com.example.todoapp.ui.fragment.TodoDetayFragment"
+        android:label="fragment_todo_detay"
+        tools:layout="@layout/fragment_todo_detay" >
+        <argument
+            android:name="todo"
+            app:argType="com.example.todoapp.data.entity.Todo" />
+    </fragment>
+</navigation>
