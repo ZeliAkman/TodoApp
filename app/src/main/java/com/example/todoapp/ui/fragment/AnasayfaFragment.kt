@@ -46,7 +46,7 @@ class AnasayfaFragment : Fragment() {
 
         // fab button action
         binding.fab.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.todoKayitFragment)
+            Navigation.findNavController(it).navigate(R.id.todoKayitGecis)
         }
 
         //Searchview Fonks.

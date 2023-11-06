@@ -20,12 +20,12 @@ class TodoDetayFragment : Fragment() {
         val bundle:TodoDetayFragmentArgs by navArgs()
         val gelenTodo = bundle.todo
 
-        binding.editDetayBaslik.setText(gelenTodo.todo_baslik)
-        binding.editDetayAciklama.setText(gelenTodo.todo_aciklama)
+        binding.editBaslik.setText(gelenTodo.todo_baslik)
+        binding.editAciklama.setText(gelenTodo.todo_aciklama)
 
         binding.buttonUpdate.setOnClickListener {
-            val todo_baslik= binding.editDetayBaslik.text.toString()
-            val todo_aciklama= binding.editDetayAciklama.text.toString()
+            val todo_baslik= binding.editBaslik.text.toString()
+            val todo_aciklama= binding.editAciklama.text.toString()
             guncelle(gelenTodo.todo_id,todo_baslik,todo_aciklama)
         }
 

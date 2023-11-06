@@ -26,7 +26,6 @@ class TodoAdapter(var mContext : Context,var  todoList :List<Todo> ) : RecyclerV
         val todo = todoList.get(position)
         val t = holder.tasarim
 
-        // card_tasarımı buraya baglıyoruz
         t.textCardBaslik.text = todo.todo_baslik
         t.textCardAciklama.text=todo.todo_aciklama
 

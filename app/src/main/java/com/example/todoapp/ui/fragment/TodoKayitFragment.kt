@@ -17,10 +17,10 @@ class TodoKayitFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentTodoKayitBinding.inflate(inflater, container, false)
 
-        binding.buttonUpdate.setOnClickListener {
+        binding.buttonSave.setOnClickListener {
 
-            val todo_baslik = binding.editDetayBaslik.text.toString()
-            val todo_aciklama =binding.editDetayAciklama.text.toString()
+            val todo_baslik = binding.editBaslik.text.toString()
+            val todo_aciklama =binding.editAciklama.text.toString()
             kaydet(todo_baslik, todo_aciklama)
         }
         return binding.root
