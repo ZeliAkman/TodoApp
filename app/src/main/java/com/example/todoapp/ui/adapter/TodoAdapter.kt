@@ -4,20 +4,23 @@ import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todoapp.data.entity.Todo
 import com.example.todoapp.databinding.CardTasarimiBinding
 import com.example.todoapp.ui.fragment.AnasayfaFragmentDirections
+import com.example.todoapp.ui.viewmodel.AnasayfaViewModel
+import com.google.android.material.R
 import com.google.android.material.snackbar.Snackbar
 
-class TodoAdapter(var mContext : Context,var  todoList :List<Todo> ) : RecyclerView.Adapter<TodoAdapter.CardTasarimTutucu>(){
+class TodoAdapter(var mContext : Context,var  todoList :List<Todo> , var viewModel: AnasayfaViewModel) : RecyclerView.Adapter<TodoAdapter.CardTasarimTutucu>(){
 
     inner class CardTasarimTutucu( var tasarim: CardTasarimiBinding) :RecyclerView.ViewHolder(tasarim.root)
 
     // Binding
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardTasarimTutucu {
-        val binding = CardTasarimiBinding.inflate(LayoutInflater.from(mContext),parent,false)
+        val binding :CardTasarimiBinding = DataBindingUtil.inflate(LayoutInflater.from(mContext),com.example.todoapp.R.layout.card_tasarimi,parent,false)
         return CardTasarimTutucu(binding)
     }
 
@@ -26,8 +29,7 @@ class TodoAdapter(var mContext : Context,var  todoList :List<Todo> ) : RecyclerV
         val todo = todoList.get(position)
         val t = holder.tasarim
 
-        t.textCardBaslik.text = todo.todo_baslik
-        t.textCardAciklama.text=todo.todo_aciklama
+        t.todoNesnesi = todo
 
         t.cardViewSatir.setOnClickListener{
             // seçilen karta geçiş
@@ -38,7 +40,7 @@ class TodoAdapter(var mContext : Context,var  todoList :List<Todo> ) : RecyclerV
         t.imageViewSil.setOnClickListener {
             Snackbar.make(it,"${todo.todo_baslik} silinsin mi ? ",Snackbar.LENGTH_SHORT)
                 .setAction("Evet"){
-                    sil(todo.todo_id)
+                    viewModel.sil(todo.todo_id)
                 }.show()
         }
     }
@@ -50,8 +52,5 @@ class TodoAdapter(var mContext : Context,var  todoList :List<Todo> ) : RecyclerV
     }
 
 
-    fun sil(todo_id:Int){
-        Log.e("Kişi sil ",todo_id.toString())
-    }
 
 }
