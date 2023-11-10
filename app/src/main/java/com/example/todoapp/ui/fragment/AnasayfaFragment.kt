@@ -33,21 +33,15 @@ class AnasayfaFragment : Fragment() {
 
         }
 
-
-
-
-
-
-
         //Searchview Fonks.
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
-                ara(query)
+                viewModel.ara(query)
                 return true
             }
 
             override fun onQueryTextChange(newText: String): Boolean {
-                ara(newText)
+                viewModel.ara(newText)
                 return true
             }
         })
@@ -65,9 +59,6 @@ class AnasayfaFragment : Fragment() {
         Navigation.findNavController(it).navigate(R.id.todoKayitGecis)
     }
 
-    fun ara(aramaKelimesi:String){
-        Log.e("ToDo  Ara : ",aramaKelimesi)
 
-    }
 
 }

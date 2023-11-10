@@ -18,4 +18,4 @@ class TodoKayitViewModel:ViewModel() {
      }
 }
 
-// arayuze daha yakın oldugu ıcın suspend kullanmadık ama suspendsizde calısmadıgı ıcın CoroutıneScopeyı kullanıyoruz
+// arayuze daha yakın oldugu ıcın suspend kullanmadık ama suspend olmadıgında calısmadıgı ıcın CoroutıneScopeyı kullanıyoruz

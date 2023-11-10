@@ -25,6 +25,16 @@ class TodoDataSource {
 
         return@withContext todoList
     }
+
+
+   suspend fun ara(aramaKelimesi:String) : List<Todo> = withContext(Dispatchers.IO) {
+       val todoList = ArrayList<Todo>()
+       val t1 = Todo(1, "Ders Çalış", "Hergün 8 Saat Yazılım Çalış")
+       todoList.add(t1)
+       return@withContext todoList
+   }
+
+
     suspend fun kaydet( todo_baslik : String, todo_aciklama :String){
         Log.e("To Do Kaydet : " , " $todo_baslik - $todo_aciklama")
     }

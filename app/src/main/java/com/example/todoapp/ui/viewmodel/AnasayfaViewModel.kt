@@ -13,7 +13,7 @@ class AnasayfaViewModel:ViewModel() {
 
     var trepo = TodoRepository()
     var todoList = MutableLiveData<List<Todo>>()
-    // ilk çalışacak fonks- önce veriler yüklensin
+    // ilk çalışacak fonks
     init {
         todoYukle()
     }
@@ -26,6 +26,12 @@ class AnasayfaViewModel:ViewModel() {
     fun todoYukle() {
         CoroutineScope(Dispatchers.Main).launch {
            todoList.value= trepo.todoYukle()
+        }
+    }
+
+    fun ara(aramaKelimesi:String){
+        CoroutineScope(Dispatchers.Main).launch {
+            todoList.value = trepo.ara(aramaKelimesi)
         }
     }
 }
