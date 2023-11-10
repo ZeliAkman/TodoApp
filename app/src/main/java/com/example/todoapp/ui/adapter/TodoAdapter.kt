@@ -11,6 +11,7 @@ import com.example.todoapp.data.entity.Todo
 import com.example.todoapp.databinding.CardTasarimiBinding
 import com.example.todoapp.ui.fragment.AnasayfaFragmentDirections
 import com.example.todoapp.ui.viewmodel.AnasayfaViewModel
+import com.example.todoapp.util.gecisYap
 import com.google.android.material.R
 import com.google.android.material.snackbar.Snackbar
 
@@ -34,7 +35,7 @@ class TodoAdapter(var mContext : Context,var  todoList :List<Todo> , var viewMod
         t.cardViewSatir.setOnClickListener{
             // seçilen karta geçiş
             val gecis = AnasayfaFragmentDirections.todoDetayGecis(todo = todo)
-            Navigation.findNavController(it).navigate(gecis)
+            Navigation.gecisYap(it,gecis) // Extensions
 
         }
         t.imageViewSil.setOnClickListener {

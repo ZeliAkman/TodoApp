@@ -16,6 +16,7 @@ import com.example.todoapp.data.entity.Todo
 import com.example.todoapp.databinding.FragmentAnasayfaBinding
 import com.example.todoapp.ui.adapter.TodoAdapter
 import com.example.todoapp.ui.viewmodel.AnasayfaViewModel
+import com.example.todoapp.util.gecisYap
 
 
 class AnasayfaFragment : Fragment() {
@@ -56,7 +57,7 @@ class AnasayfaFragment : Fragment() {
     }
 
     fun fabTikla(it:View){
-        Navigation.findNavController(it).navigate(R.id.todoKayitGecis)
+        Navigation.gecisYap(it,R.id.todoKayitGecis) // Extensions
     }
 
     // for return
