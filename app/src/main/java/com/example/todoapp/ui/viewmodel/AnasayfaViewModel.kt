@@ -20,6 +20,7 @@ class AnasayfaViewModel:ViewModel() {
     fun sil(todo_id:Int){
         CoroutineScope(Dispatchers.Main).launch {
             trepo.sil(todo_id)
+            todoYukle() // after delete ,update list
         }
     }
 
