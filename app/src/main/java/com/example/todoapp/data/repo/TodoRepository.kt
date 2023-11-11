@@ -5,8 +5,7 @@ import com.example.todoapp.data.entity.Todo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class  TodoRepository {
-    var tds = TodoDataSource()
+class  TodoRepository(var tds:TodoDataSource) {
     suspend fun kaydet( todo_baslik : String, todo_aciklama :String) = tds.kaydet(todo_baslik,todo_aciklama)
 
     suspend fun guncelle( todo_id :Int, todo_baslik : String, todo_aciklama :String) = tds.guncelle(todo_id,todo_baslik,todo_aciklama)

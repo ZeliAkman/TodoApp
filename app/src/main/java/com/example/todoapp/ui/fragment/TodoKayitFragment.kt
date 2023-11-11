@@ -11,16 +11,15 @@ import androidx.fragment.app.viewModels
 import com.example.todoapp.R
 import com.example.todoapp.databinding.FragmentTodoKayitBinding
 import com.example.todoapp.ui.viewmodel.TodoKayitViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class TodoKayitFragment : Fragment() {
     private lateinit var binding: FragmentTodoKayitBinding
     private lateinit var viewModel: TodoKayitViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_todo_kayit, container, false)
-
         binding.todoKayitFragment=this
         return binding.root
     }

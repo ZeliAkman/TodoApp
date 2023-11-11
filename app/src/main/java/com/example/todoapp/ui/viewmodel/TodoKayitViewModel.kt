@@ -2,13 +2,15 @@ package com.example.todoapp.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import com.example.todoapp.data.repo.TodoRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class TodoKayitViewModel:ViewModel() {
+@HiltViewModel
+class TodoKayitViewModel( var trepo: TodoRepository):ViewModel() {
 
-     var trepo = TodoRepository()
+
      fun kaydet( todo_baslik : String, todo_aciklama :String){
 
           CoroutineScope(Dispatchers.Main).launch {

@@ -12,8 +12,9 @@ import androidx.navigation.fragment.navArgs
 import com.example.todoapp.R
 import com.example.todoapp.databinding.FragmentTodoDetayBinding
 import com.example.todoapp.ui.viewmodel.TodoDetayViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class TodoDetayFragment : Fragment() {
     private lateinit var binding: FragmentTodoDetayBinding
     private lateinit var viewModel: TodoDetayViewModel

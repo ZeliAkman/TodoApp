@@ -5,13 +5,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.todoapp.data.entity.Todo
 import com.example.todoapp.data.repo.TodoRepository
+import dagger.hilt.android.HiltAndroidApp
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class AnasayfaViewModel:ViewModel() {
-
-    var trepo = TodoRepository()
+@HiltViewModel
+class AnasayfaViewModel @Inject constructor (var trepo:TodoRepository):ViewModel() {
     var todoList = MutableLiveData<List<Todo>>()
     // ilk çalışacak fonks
     init {

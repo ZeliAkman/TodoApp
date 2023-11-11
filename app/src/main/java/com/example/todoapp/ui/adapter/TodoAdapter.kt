@@ -15,7 +15,8 @@ import com.example.todoapp.util.gecisYap
 import com.google.android.material.R
 import com.google.android.material.snackbar.Snackbar
 
-class TodoAdapter(var mContext : Context,var  todoList :List<Todo> , var viewModel: AnasayfaViewModel) : RecyclerView.Adapter<TodoAdapter.CardTasarimTutucu>(){
+class TodoAdapter(var mContext : Context,var  todoList :List<Todo> , var viewModel: AnasayfaViewModel)
+    : RecyclerView.Adapter<TodoAdapter.CardTasarimTutucu>(){
 
     inner class CardTasarimTutucu( var tasarim: CardTasarimiBinding) :RecyclerView.ViewHolder(tasarim.root)
 
